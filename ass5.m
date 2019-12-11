@@ -106,11 +106,9 @@ for j = 1:N
     mu_j = samples(j,1);
     sigma_j = samples(j,2);
     tau_j = samples(j,3);
-    mean_j = exp(mu_j + 0.5 .* sigma_j.^2 + 0.5 .* tau_j.^2);
-    variance_j = exp(2*mu_j + (sigma_j).^2)*(exp(sigma_j.^2)-1);
-    std_deviation_j = sqrt(variance_j);
-    Random_Guy(j) = std_deviation_j.*randn(1) + mean_j; %generating a 
-    %random measurement using mean and standard deviation
+    theta_j = mu_j+(tau_j*randn(1));
+    random_sample = theta_j+(sigma_j*randn(1));
+    Random_Guy(j) = exp(random_sample);
 end
 random_mean = mean(Random_Guy);
 [M,edges] = histcounts(Random_Guy);
