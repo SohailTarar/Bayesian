@@ -110,4 +110,5 @@ figure;
 subplot(1,2,1); plot_attempt_1(Dude_att1); title('Dude 1st attempt'); xlabel('exp(\theta_0[1]+\theta_1[1](1)+\sigma^2/2)');
 subplot(1,2,2); plot_attempt_5(Dude_att5); title('Dude 5th attempt'); xlabel('exp(\theta_0[1]+\theta_1[1](5)+\sigma^2/2)');
 
+%used functions (logpost7, HDI, plot_attempt_1, plot_attempt_5, %plot_learning_rate) available on GitHub
 
